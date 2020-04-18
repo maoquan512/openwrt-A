@@ -70,11 +70,6 @@ jobs:
         ../$DIY_SH
         make defconfig
 
-    - name: 改转换
-      run: cd openwrt/package/OpenClash/luci-app-openclash/files/etc/openclash/core && tar xvf clash-linux-amd64-v0.19.0-R_pre.gz
-    - name: 改名
-      run: cd openwrt/package/OpenClash/luci-app-openclash/files/etc/openclash/core && mv -f clash-linux-amd64-v0.19.0-R_pre clash
-
     - name: 下载软件包
       id: package
       run: |
