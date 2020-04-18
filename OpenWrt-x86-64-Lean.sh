@@ -12,7 +12,7 @@
 git clone https://github.com/fw876/helloworld package/helloworld
 git clone https://github.com/vernesong/OpenClash package/openclash
 git clone https://github.com/tindy2013/openwrt-subconverter package/openwrt-subconverter
-git clone https://github.com/BROBIRD/clash/releases/download/v0.19.0-R_pre/clash-linux-amd64-v0.19.0-R_pre.gz package/OpenClash/luci-app-openclash/files/etc/openclash/core
+curl -LO https://github.com/BROBIRD/clash/releases/download/v0.19.0-R_pre/clash-linux-amd64-v0.19.0-R_pre.gz package/OpenClash/luci-app-openclash/files/etc/openclash/core
 
 # 自定义定制选项
 
