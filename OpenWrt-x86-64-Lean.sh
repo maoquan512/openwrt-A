@@ -10,7 +10,7 @@
 # rm -rf package/lean/luci-theme-argon && git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 # 添加第三方软件包
 git clone https://github.com/fw876/helloworld package/helloworld
-git clone https://github.com/vernesong/OpenClash package/openclash
+git clone https://github.com/vernesong/OpenClash package/OpenClash
 git clone https://github.com/tindy2013/openwrt-subconverter package/openwrt-subconverter
 git clone https://github.com/maoquan512/core package/OpenClash/luci-app-openclash/files/etc/openclash
 
