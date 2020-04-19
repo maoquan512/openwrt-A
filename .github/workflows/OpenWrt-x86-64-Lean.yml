@@ -71,7 +71,7 @@ jobs:
         make defconfig
 
     - name: 权限
-      run: cd openwrt/files/package/OpenClash/luci-app-openclash/files/etc/openclash && chmod -R 777 core
+      run: cd openwrt/package/OpenClash/luci-app-openclash/files/etc/openclash && chmod -R 777 core
 
     - name: 下载软件包
       id: package
