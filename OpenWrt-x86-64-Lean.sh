@@ -62,6 +62,7 @@ cat >> .config <<EOF
 CONFIG_TARGET_x86=y
 CONFIG_TARGET_x86_64=y
 CONFIG_TARGET_x86_64_Generic=y
+CONFIG_LINUX_4_9=y
 EOF
 
 # 设置固件大小:
@@ -167,7 +168,6 @@ cat >> .config <<EOF
 #
 # CONFIG_PACKAGE_luci-app-minidlna is not set #miniDLNA服务
 # CONFIG_PACKAGE_luci-app-vsftpd is not set #FTP 服务器
-# CONFIG_PACKAGE_luci-app-samba is not set #网络共享
 # CONFIG_PACKAGE_autosamba is not set #网络共享
 # CONFIG_PACKAGE_samba36-server is not set #网络共享
 EOF
