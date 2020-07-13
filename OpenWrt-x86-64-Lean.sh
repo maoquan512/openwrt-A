@@ -62,7 +62,6 @@ cat >> .config <<EOF
 CONFIG_TARGET_x86=y
 CONFIG_TARGET_x86_64=y
 CONFIG_TARGET_x86_64_Generic=y
-CONFIG_LINUX_4_9=y
 EOF
 
 # 设置固件大小:
