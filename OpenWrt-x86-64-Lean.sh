@@ -16,9 +16,6 @@ git clone https://github.com/maoquan512/core package/OpenClash/luci-app-openclas
 
 # 自定义定制选项
 
-sed -i 's#192.168.1.1#192.168.2.1#g' package/base-files/files/bin/config_generate #定制默认IP
-sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings #取消系统默认密码
-
 #创建自定义配置文件 - OpenWrt-x86-64
 
 rm -f ./.config*
