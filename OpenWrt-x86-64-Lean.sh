@@ -17,9 +17,14 @@ cat feeds.conf.default
 # 添加第三方软件包
 git clone https://github.com/fw876/helloworld package/helloworld
 git clone -b master https://github.com/vernesong/OpenClash package/OpenClash
-#git clone https://github.com/maoquan512/core package/OpenClash/luci-app-openclash/files/etc/openclash/core
+git clone https://github.com/maoquan512/core package/OpenClash/luci-app-openclash/files/etc/openclash/core
 
 # 自定义定制选项
+# 自定义定制选项
+
+sed -i 's#192.168.1.1#192.168.2.1#g' package/base-files/files/bin/config_generate #定制默认IP
+sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings #取消系统默认密码
+
 # 替换更新haproxy默认版本
 rm -rf feeds/packages/net/haproxy && svn co https://github.com/Lienol/openwrt-packages/trunk/net/haproxy feeds/packages/net/haproxy
 

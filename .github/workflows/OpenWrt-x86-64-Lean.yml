@@ -72,6 +72,10 @@ jobs:
         cd openwrt
         ../$DIY_SH
         make defconfig
+
+    - name: 权限
+      run: cd openwrt/package/OpenClash/luci-app-openclash/files/etc/openclash && chmod -R 777 core
+
     - name: 开启SSH远程连接
       uses: P3TERX/debugger-action@master
       if: env.SSH_ACTIONS == 'true'
