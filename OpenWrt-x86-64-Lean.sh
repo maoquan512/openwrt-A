@@ -26,7 +26,7 @@ sed -i 's#192.168.1.1#192.168.2.1#g' package/base-files/files/bin/config_generat
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings #取消系统默认密码
 
 # 替换更新haproxy默认版本
-rm -rf feeds/packages/net/haproxy && svn co https://github.com/Lienol/openwrt-packages/trunk/net/haproxy feeds/packages/net/haproxy
+#rm -rf feeds/packages/net/haproxy && svn co https://github.com/Lienol/openwrt-packages/trunk/net/haproxy feeds/packages/net/haproxy
 
 #创建自定义配置文件 - OpenWrt-x86-64
 
