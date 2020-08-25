@@ -15,6 +15,7 @@ cat feeds.conf.default
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
 # 添加第三方软件包
+git clone https://github.com/tindy2013/openwrt-subconverter package/openwrt-subconverter
 git clone https://github.com/fw876/helloworld package/helloworld
 git clone -b master https://github.com/vernesong/OpenClash package/OpenClash
 git clone https://github.com/maoquan512/core package/OpenClash/luci-app-openclash/files/etc/openclash/core
@@ -116,6 +117,7 @@ EOF
 
 # 第三方插件选择:
 cat >> .config <<EOF
+CONFIG_PACKAGE_subconverter=y #转换
 CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
 EOF
 
