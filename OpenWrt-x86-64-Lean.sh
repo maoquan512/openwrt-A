@@ -125,6 +125,7 @@ EOF
 
 # 常用LuCI插件(禁用):
 cat >> .config <<EOF
+# CONFIG_PACKAGE_luci-app-ddns is not set #DDNS服务
 # CONFIG_PACKAGE_luci-app-dockerman is not set
 # CONFIG_PACKAGE_luci-app-haproxy-tcp is not set
 # CONFIG_PACKAGE_luci-app-qos is not set
