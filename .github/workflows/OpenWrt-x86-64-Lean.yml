@@ -1,9 +1,9 @@
 name: OpenWrt-x86-64-Lean
 
 on:
-# 定时触发(每周一早6点10分)
+# 定时触发(每周一早5点)
   schedule:
-    - cron: 10 22 * * 1
+    - cron: 0 21 * * 1
 
 # release触发
   release:
@@ -22,7 +22,6 @@ on:
 #  paths:
 #    - 'x86_64.config'
 
-#SSH_ACTIONS 开启SSH连接
 #UPLOAD_BIN_DIR上传BIN目录
 #UPLOAD_FIRMWARE上传固件目录
 
@@ -30,7 +29,6 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   DIY_SH: OpenWrt-x86-64-Lean.sh
-  SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   TZ: Asia/Shanghai
@@ -51,9 +49,9 @@ jobs:
       run: |
         docker rmi `docker images -q`
         sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
-        sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
+        sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php* android*
         sudo -E apt-get update
-        sudo -E apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync
+        sudo -E apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs gcc-multilib g++-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler antlr3 gperf swig
         sudo -E apt-get -y autoremove --purge
         sudo -E apt-get clean
         
@@ -72,14 +70,6 @@ jobs:
         cd openwrt
         ../$DIY_SH
         make defconfig
-
-    #- name: 权限
-      #run: cd openwrt/package/OpenClash/luci-app-openclash/files/etc/openclash && chmod -R 777 core
-
-    - name: 开启SSH远程连接
-      uses: P3TERX/debugger-action@master
-      if: env.SSH_ACTIONS == 'true'
-
     - name: 下载软件包
       id: package
       run: |
