@@ -21,9 +21,6 @@ git clone -b master https://github.com/vernesong/OpenClash package/OpenClash
 #git clone https://github.com/maoquan512/core package/OpenClash/luci-app-openclash/files/etc/openclash/core
 
 # 自定义定制选项
-# 自定义定制选项
-sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=4.19/g' target/linux/x86/Makefile
-sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' target/linux/x86/Makefile
 sed -i 's#192.168.1.1#192.168.2.1#g' package/base-files/files/bin/config_generate #定制默认IP
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings #取消系统默认密码
 
